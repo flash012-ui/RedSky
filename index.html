@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Red Sky RP</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #eee;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #111;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 1000;
+    }
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      padding: 8px 15px;
+      transition: 0.3s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #ff1a1a;
+    }
+    header {
+      background: url('RedSky.png') center top/contain no-repeat;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      background-color: #000;
+      padding-bottom: 20px;
+    }
+    header h1 {
+      font-size: 3.5em;
+      color: #ff1a1a;
+      text-shadow: 0 0 15px #000;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.4em;
+      max-width: 800px;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+    .btn-discord,
+    .btn-fivem {
+      margin: 0 10px;
+      padding: 14px 30px;
+      background: #ff1a1a;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+    }
+    .btn-discord:hover,
+    .btn-fivem:hover {
+      background: #cc0000;
+      transform: scale(1.05);
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+    .title {
+      font-size: 2.5em;
+      color: #ff3333;
+      margin-bottom: 20px;
+    }
+    .feature-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #000;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .card h3 {
+      color: #ff1a1a;
+      margin-bottom: 10px;
+    }
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 40px;
+    }
+    .info-box {
+      background: #111;
+      padding: 25px 40px;
+      border-radius: 10px;
+      border: 1px solid #ff1a1a;
+      box-shadow: 0 0 10px #000;
+    }
+    .info-box h4 {
+      color: #ff1a1a;
+    }
+    .rules {
+      background: #111;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: left;
+      color: #ccc;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0a0a0a;
+      color: #666;
+      margin-top: 60px;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .info {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#despre" class="active">Despre</a>
+    <a href="#features">Caracteristici</a>
+    <a href="#echipa">Echipă</a>
+    <a href="#reguli">Reguli</a>
+  </nav>
+
+  <header>
+    <h1>Red Sky RP</h1>
+    <p>Hard Roleplay • Economie Realistă • Comunitate Serioasă</p>
+    <a class="btn-discord" href="https://discord.gg/redskyrp" target="_blank">Discord</a>
+    <a class="btn-fivem" href="#" onclick="alert('Conectare FiveM direct — coming soon!')">Connect FiveM</a>
+  </header>
+
+  <section id="despre">
+    <h2 class="title">Despre Server</h2>
+    <p>
+      Red Sky RP este un server de FiveM Hard Roleplay cu economie realistă, facțiuni active și o comunitate matură. Totul este construit cu pasiune, profesionalism și respect pentru jucători.
+    </p>
+  </section>
+
+  <section id="features">
+    <h2 class="title">Caracteristici</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <h3>💼 Economie Realistă</h3>
+        <p>Prețuri echilibrate, joburi, afaceri și sistem bancar.</p>
+      </div>
+      <div class="card">
+        <h3>🎭 Roleplay Serios</h3>
+        <p>Fiecare rol este jucat cu realism și respect pentru reguli.</p>
+      </div>
+      <div class="card">
+        <h3>🚓 Facțiuni Active</h3>
+        <p>Poliție, EMS, Mafii, Gangs — toate conduse de jucători reali.</p>
+      </div>
+      <div class="card">
+        <h3>🌆 Mapă Custom</h3>
+        <p>Los Santos personalizat pentru experiență RP completă.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="echipa">
+    <h2 class="title">Echipa Red Sky</h2>
+    <div class="info">
+      <div class="info-box">
+        <h4>Fondatori</h4>
+        <p>Arabu<br />Italianu<br />Francezu</p>
+      </div>
+      <div class="info-box">
+        <h4>Developer</h4>
+        <p>DX</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reguli">
+    <h2 class="title">Reguli Server</h2>
+    <div class="rules">
+      <ul>
+        <li>Respectă toți jucătorii și staff-ul.</li>
+        <li>Fără troll, powergaming, metagaming.</li>
+        <li>Joacă roleplay serios în orice situație.</li>
+        <li>Staff-ul are ultima decizie în conflicte.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Red Sky RP • Toate drepturile rezervate
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const reveal = () => {
+      cards.forEach(c => {
+        const rect = c.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          c.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+  </script>
+
+</body>
+</html>
