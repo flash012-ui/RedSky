@@ -1,252 +1,194 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Red Sky RP</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smoke Romania RP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #0b0f1a; color: #f0f0f0; }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,30,0.6), rgba(0,0,50,0.9)), url('Smoke.png') center/contain no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
-      color: #eee;
+
+    header h1 {
+      font-size: 4em;
+      color: #00aaff;
+      text-shadow: 0 0 15px #000;
+      animation: fadeInDown 1s ease-in-out;
     }
+
+    header p {
+      font-size: 1.3em;
+      margin-top: 20px;
+      color: #d0dfff;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0088cc;
+      transform: scale(1.05);
+    }
+
     nav {
       position: sticky;
       top: 0;
-      background: #111;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+      background: #0b0f1a;
+      padding: 15px;
+      text-align: center;
       z-index: 1000;
     }
+
     nav a {
-      color: #ccc;
+      color: #aabbee;
+      margin: 0 15px;
       text-decoration: none;
-      padding: 8px 15px;
+      font-weight: bold;
       transition: 0.3s;
     }
-    nav a:hover,
-    nav a.active {
-      color: #ff1a1a;
+
+    nav a:hover {
+      color: #00aaff;
     }
-    header {
-      background: url('RedSky.png') center top/contain no-repeat;
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      text-align: center;
-      background-color: #000;
-      padding-bottom: 20px;
-    }
-    header h1 {
-      font-size: 3.5em;
-      color: #ff1a1a;
-      text-shadow: 0 0 15px #000;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.4em;
-      max-width: 800px;
-      color: #ccc;
-      margin-bottom: 15px;
-    }
-    .btn-discord,
-    .btn-fivem {
-      margin: 0 10px;
-      padding: 14px 30px;
-      background: #ff1a1a;
-      color: #fff;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-      display: inline-block;
-    }
-    .btn-discord:hover,
-    .btn-fivem:hover {
-      background: #cc0000;
-      transform: scale(1.05);
-    }
+
     section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
       text-align: center;
     }
+
     .title {
-      font-size: 2.5em;
-      color: #ff3333;
+      font-size: 2.8em;
       margin-bottom: 20px;
+      color: #00aaff;
     }
-    .feature-grid {
+
+    .grid {
       display: grid;
-      gap: 30px;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .card {
-      background: #1a1a1a;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #000;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s, transform 0.8s;
-    }
-    .card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .card h3 {
-      color: #ff1a1a;
-      margin-bottom: 10px;
-    }
-    .info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 60px;
+      gap: 30px;
       margin-top: 40px;
     }
-    .info-box {
-      background: #111;
-      padding: 25px 40px;
-      border-radius: 10px;
-      border: 1px solid #ff1a1a;
-      box-shadow: 0 0 10px #000;
-    }
-    .info-box h4 {
-      color: #ff1a1a;
-    }
-    .rules {
-      background: #111;
+
+    .card {
+      background: #121826;
+      border-left: 4px solid #00aaff;
       padding: 20px;
-      border-radius: 8px;
-      text-align: left;
-      color: #ccc;
-      max-width: 800px;
-      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s;
     }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
     footer {
+      background: #0a0d14;
+      color: #aaa;
       text-align: center;
       padding: 20px;
-      background: #0a0a0a;
-      color: #666;
-      margin-top: 60px;
+      margin-top: 40px;
     }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.5em;
-      }
-      header p {
-        font-size: 1em;
-      }
-      .info {
-        flex-direction: column;
-        gap: 30px;
-      }
+
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media(max-width: 600px) {
+      header h1 { font-size: 2.5em; }
+      .title { font-size: 2em; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#despre" class="active">Despre</a>
-    <a href="#features">Caracteristici</a>
-    <a href="#echipa">Echipă</a>
-    <a href="#reguli">Reguli</a>
-  </nav>
+<nav>
+  <a href="#despre">Despre</a>
+  <a href="#caracteristici">Caracteristici</a>
+  <a href="#echipa">Echipa</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <header>
-    <h1>Red Sky RP</h1>
-    <p>Hard Roleplay • Economie Realistă • Comunitate Serioasă</p>
-    <a class="btn-discord" href="https://discord.gg/redskyrp" target="_blank">Discord</a>
-    <a class="btn-fivem" href="#" onclick="alert('Conectare FiveM direct — coming soon!')">Connect FiveM</a>
-  </header>
+<header>
+  <h1>Smoke Romania RP</h1>
+  <p>Hard Roleplay | Economie Realistă | SMURD | Gangs | Mafii | Politie</p>
+  <a class="btn" href="https://discord.gg/redskyrp" target="_blank">Join Discord</a>
+</header>
 
-  <section id="despre">
-    <h2 class="title">Despre Server</h2>
-    <p>
-      Red Sky RP este un server de FiveM Hard Roleplay cu economie realistă, facțiuni active și o comunitate matură. Totul este construit cu pasiune, profesionalism și respect pentru jucători.
-    </p>
-  </section>
+<section id="despre">
+  <h2 class="title">Despre Server</h2>
+  <p>
+    Smoke Romania este un server de FiveM cu roleplay autentic, economie reală și experiență imersivă. Totul este construit de o echipă dedicată pasionaților de RP. Intră și descoperă viața altfel!
+  </p>
+</section>
 
-  <section id="features">
-    <h2 class="title">Caracteristici</h2>
-    <div class="feature-grid">
-      <div class="card">
-        <h3>💼 Economie Realistă</h3>
-        <p>Prețuri echilibrate, joburi, afaceri și sistem bancar.</p>
-      </div>
-      <div class="card">
-        <h3>🎭 Roleplay Serios</h3>
-        <p>Fiecare rol este jucat cu realism și respect pentru reguli.</p>
-      </div>
-      <div class="card">
-        <h3>🚓 Facțiuni Active</h3>
-        <p>Poliție, EMS, Mafii, Gangs — toate conduse de jucători reali.</p>
-      </div>
-      <div class="card">
-        <h3>🌆 Mapă Custom</h3>
-        <p>Los Santos personalizat pentru experiență RP completă.</p>
-      </div>
+<section id="caracteristici">
+  <h2 class="title">Caracteristici</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🧠 Roleplay Avansat</h3>
+      <p>Scene realiste, reguli stricte, RP matur și captivant.</p>
     </div>
-  </section>
-
-  <section id="echipa">
-    <h2 class="title">Echipa Red Sky</h2>
-    <div class="info">
-      <div class="info-box">
-        <h4>Fondatori</h4>
-        <p>Arabu<br />Italianu<br />Francezu</p>
-      </div>
-      <div class="info-box">
-        <h4>Developer</h4>
-        <p>DX</p>
-      </div>
+    <div class="card">
+      <h3>🚓 Facțiuni Diverse</h3>
+      <p>Poliție, SMURD, Mafii, Gangs — totul condus de jucători!</p>
     </div>
-  </section>
-
-  <section id="reguli">
-    <h2 class="title">Reguli Server</h2>
-    <div class="rules">
-      <ul>
-        <li>Respectă toți jucătorii și staff-ul.</li>
-        <li>Fără troll, powergaming, metagaming.</li>
-        <li>Joacă roleplay serios în orice situație.</li>
-        <li>Staff-ul are ultima decizie în conflicte.</li>
-      </ul>
+    <div class="card">
+      <h3>💸 Economie Realistă</h3>
+      <p>Salarii, taxe, afaceri, sistem bancar și piață neagră.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>🌍 Mapă Custom</h3>
+      <p>Los Santos detaliat, zone RP special create, realism urban.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2025 Red Sky RP • Toate drepturile rezervate
-  </footer>
+<section id="echipa">
+  <h2 class="title">Fondatori & Echipa</h2>
+  <div class="grid">
+    <div class="card"><h3>👑 Fondatori</h3><p>Arabu, Italianu, Francezu</p></div>
+    <div class="card"><h3>🧠 Developer</h3><p>DX</p></div>
+  </div>
+</section>
 
-  <script>
-    const cards = document.querySelectorAll('.card');
-    const reveal = () => {
-      cards.forEach(c => {
-        const rect = c.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
-          c.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', reveal);
-    reveal();
-  </script>
+<section id="contact">
+  <h2 class="title">Contact</h2>
+  <a class="btn" href="https://discord.gg/smokero" target="_blank">Discord Smoke RP</a>
+</section>
+
+<footer>
+  © 2025 Smoke Romania RP — Toate drepturile rezervate.
+</footer>
 
 </body>
 </html>
